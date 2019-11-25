@@ -1,9 +1,5 @@
 ﻿
 using System.Windows;
-using WPFT_Training.Helper;
-
-
-
 
 namespace WPFT_Training
 {
@@ -16,18 +12,7 @@ namespace WPFT_Training
      
         public MainWindow()
         {
-            InitializeComponent();
-        }
-
-        private async void LoadCoinsButton_Click(object sender, RoutedEventArgs e)
-        {
-            loadCoinsButton.IsEnabled = false;
-            loadingStatusPB.IsIndeterminate = true;
-            
-            coinsDataGrid.ItemsSource = await TradableCoinsLoader.LoadTradableCoins();
-            
-            loadingStatusPB.IsIndeterminate = false;
-            loadCoinsButton.IsEnabled = true;
+            this.InitializeComponent();
         }
     }
     

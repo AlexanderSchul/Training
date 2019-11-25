@@ -3,17 +3,44 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFT_Training"
+        xmlns:viewModel="clr-namespace:WPFT_Training.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1439">
+        Title="MainWindow" Height="450" Width="1440">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button IsEnabled="True" Content="Load Coins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Name="loadCoinsButton" Click="LoadCoinsButton_Click"/>
-        <ProgressBar HorizontalAlignment="Left" Height="20" Grid.Row="0" VerticalAlignment="Top" Width="100" Margin="145,0,0,0" Name="loadingStatusPB" Minimum="0" Maximum="100" IsIndeterminate="False" />
-        <DataGrid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Name="coinsDataGrid" AutoGenerateColumns="False" AlternatingRowBackground="LightGray" ColumnWidth="*" CanUserAddRows="False" CanUserReorderColumns="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Button IsEnabled="True" Content="Load Coins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Command="{Binding LoadCoinsCommand}"/>
+        <ProgressBar Grid.Column="1"  HorizontalAlignment="Left" Height="20" Grid.Row="0" VerticalAlignment="Top" Width="100" Minimum="0" Maximum="100" IsIndeterminate="True" >
+            <ProgressBar.Resources>
+                <Style TargetType="ProgressBar">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsLoadingCoins}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ProgressBar.Resources>
+        </ProgressBar>
+        <DataGrid Grid.Row="1" 
+                  Grid.ColumnSpan="2" 
+                  Grid.Column="0"
+                  ItemsSource="{Binding TradableCoins}"
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Top" 
+                  AutoGenerateColumns="False" 
+                  AlternatingRowBackground="LightGray" 
+                  ColumnWidth="*" CanUserAddRows="False" 
+                  CanUserReorderColumns="False">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Gray"/>
