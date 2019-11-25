@@ -11,7 +11,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button IsEnabled="True" Content="Load Coins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Name="loadCoinsButton" Click="loadCoinsButton_Click"/>
+        <Button IsEnabled="True" Content="Load Coins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Name="loadCoinsButton" Click="LoadCoinsButton_Click"/>
 
         <DataGrid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Name="coinsDataGrid" AutoGenerateColumns="False" AlternatingRowBackground="LightGray" ColumnWidth="*" CanUserAddRows="False" CanUserReorderColumns="False">
             <DataGrid.Resources>

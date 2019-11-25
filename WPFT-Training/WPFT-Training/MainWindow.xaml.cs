@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
+﻿
 using System.Windows;
-using Newtonsoft.Json;
-using System.Net.Http;
 using WPFT_Training.Helper;
 
 
@@ -21,7 +19,7 @@ namespace WPFT_Training
             InitializeComponent();
         }
 
-        private async void loadCoinsButton_Click(object sender, RoutedEventArgs e)
+        private async void LoadCoinsButton_Click(object sender, RoutedEventArgs e)
         {
             loadCoinsButton.IsEnabled = false;
             loadingStatusPB.IsIndeterminate = true;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WPFT_Training.Helper
 {
@@ -10,7 +11,6 @@ namespace WPFT_Training.Helper
     {
         public static async Task<List<TradableCoinsModel>> LoadTradableCoins() 
         {
-            
             var client = new HttpClient();
             var response = await client.GetAsync("https://api.coinmarketcap.com/v1/ticker/");
             var content = await response.Content.ReadAsStringAsync();
