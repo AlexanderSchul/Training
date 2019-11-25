@@ -13,11 +13,11 @@ namespace GetBookingValues.Controllers
 {
     public class ListElementsController : ApiController
     {
-        public static List<ListElements> GetListElements()
+        public static List<TradableCoins> GetListElements()
         {
             string json = new WebClient().DownloadString("https://api.coinmarketcap.com/v1/ticker/");
 
-            List<ListElements> items = JsonConvert.DeserializeObject<List<ListElements>>(json);
+            List<TradableCoins> items = JsonConvert.DeserializeObject<List<TradableCoins>>(json);
 
             return items;
         }

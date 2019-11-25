@@ -6,14 +6,14 @@ using Newtonsoft.Json;
 
 namespace GetBookingValues.Models
 {
-    public class ListElements
+    public class TradableCoins
     {
         public string Id { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }
         public string Rank { get; set; }
         public string Price_usd { get; set; }
-        [JsonProperty(PropertyName = "24h_volume_usd")]   //since in c# variable names cannot begin with a number, you will need to use an alternate name to deserialize
+        [JsonProperty(PropertyName = "24h_volume_usd")]   
         public string Volume_usd_24h { get; set; }
         public string Market_cap_usd { get; set; }
         public string Available_supply { get; set; }

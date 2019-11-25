@@ -1,23 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net;
-using System.IO;
 using Newtonsoft.Json;
-using GetBookingValues.Models;
-using GetBookingValues.Controllers;
-using System.Web;
+using System.Net.Http;
+using WPFT_Training.Helper;
 
 
 
@@ -41,11 +26,17 @@ namespace WPFT_Training
             
         }
 
-        private void loadButton_Click(object sender, RoutedEventArgs e)
+        private async void loadCoinsButton_Click(object sender, RoutedEventArgs e)
         {
-            List<ListElements> test = ListElementsController.GetListElements();
+            var client = new HttpClient();
+            var response = await client.GetAsync("https://api.coinmarketcap.com/v1/ticker/");
+            var content = await response.Content.ReadAsStringAsync();
+            var coinList = JsonConvert.DeserializeObject<List<TradableCoins>>(content);
+            
+            
+            
 
-            dataGrid1.ItemsSource = test;
+            coinsDataGrid.ItemsSource = coinList;
         }
     }
     

@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFT-Training", "WPFT-Training\WPFT-Training.csproj", "{6E675CF9-D03A-45AD-9254-D763FE1DA66E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{2C722F4D-CD00-4D25-A38D-767043FB7EB7} = {2C722F4D-CD00-4D25-A38D-767043FB7EB7}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetBookingValues", "GetBookingValues\GetBookingValues.csproj", "{2C722F4D-CD00-4D25-A38D-767043FB7EB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +15,6 @@ Global
 		{6E675CF9-D03A-45AD-9254-D763FE1DA66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E675CF9-D03A-45AD-9254-D763FE1DA66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E675CF9-D03A-45AD-9254-D763FE1DA66E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C722F4D-CD00-4D25-A38D-767043FB7EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C722F4D-CD00-4D25-A38D-767043FB7EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C722F4D-CD00-4D25-A38D-767043FB7EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C722F4D-CD00-4D25-A38D-767043FB7EB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

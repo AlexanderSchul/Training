@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1439">
     <Grid Margin="10">
-        <Button Content="Load Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="133" Margin="10,10,0,0" Name="loadButton" Click="loadButton_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Load Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Name="loadCoinsButton" Click="loadCoinsButton_Click"/>
         
-        <DataGrid HorizontalAlignment="Left" Height="285" Margin="10,69,0,0" VerticalAlignment="Top" Width="1401" Name="dataGrid1" AutoGenerateColumns="False" AlternatingRowBackground="LightGray" ColumnWidth="*" CanUserAddRows="False" CanUserReorderColumns="False">
+        <DataGrid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Name="coinsDataGrid" AutoGenerateColumns="False" AlternatingRowBackground="LightGray" ColumnWidth="*" CanUserAddRows="False" CanUserReorderColumns="False">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Gray"/>
@@ -20,19 +24,19 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50*"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="50*"/>
-                <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}" Width="50*"/>
-                <DataGridTextColumn Header="Rank" Binding="{Binding Rank}" Width="50*"/>
-                <DataGridTextColumn Header="Price_usd" Binding="{Binding Price_usd}" Width="50*"/>
-                <DataGridTextColumn Header="Volume_usd_24h" Binding="{Binding Volume_usd_24h}" Width="50*" />
-                <DataGridTextColumn Header="Market_cap_usd" Binding="{Binding Market_cap_usd}" Width="50*" />
-                <DataGridTextColumn Header="Available_supply" Binding="{Binding Available_supply}" Width="50*" />
-                <DataGridTextColumn Header="Total_supply" Binding="{Binding Total_supply}" Width="50*" />
-                <DataGridTextColumn Header="Percent_change_1h" Binding="{Binding Percent_change_1h}" Width="50*" />
-                <DataGridTextColumn Header="Percent_change_24h" Binding="{Binding Percent_change_24h}" Width="50*" />
-                <DataGridTextColumn Header="Percent_change_7d" Binding="{Binding Percent_change_7d}" Width="50*" />
-                <DataGridTextColumn Header="Last_updated" Binding="{Binding Last_updated}" Width="50*" />
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="100*"/>
+                <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}" Width="100*"/>
+                <DataGridTextColumn Header="Rank" Binding="{Binding Rank}" Width="100*"/>
+                <DataGridTextColumn Header="Price_usd" Binding="{Binding Price_usd}" Width="100*"/>
+                <DataGridTextColumn Header="Volume_usd_24h" Binding="{Binding Volume_usd_24h}" Width="100*" />
+                <DataGridTextColumn Header="Market_cap_usd" Binding="{Binding Market_cap_usd}" Width="100*" />
+                <DataGridTextColumn Header="Available_supply" Binding="{Binding Available_supply}" Width="100*" />
+                <DataGridTextColumn Header="Total_supply" Binding="{Binding Total_supply}" Width="100*" />
+                <DataGridTextColumn Header="Percent_change_1h" Binding="{Binding Percent_change_1h}" Width="100*" />
+                <DataGridTextColumn Header="Percent_change_24h" Binding="{Binding Percent_change_24h}" Width="100*" />
+                <DataGridTextColumn Header="Percent_change_7d" Binding="{Binding Percent_change_7d}" Width="100*" />
+                <DataGridTextColumn Header="Last_updated" Binding="{Binding Last_updated}" Width="100*" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
