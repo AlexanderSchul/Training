@@ -69,7 +69,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helper\TradableCoins.cs" />
+    <Compile Include="Helper\TradableCoinsModel.cs" />
+    <Compile Include="Helper\TradableCoinsLoader.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

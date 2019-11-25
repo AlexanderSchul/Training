@@ -2,7 +2,7 @@
 
 namespace WPFT_Training.Helper
 {
-    public class TradableCoins
+    public class TradableCoinsModel
     {
         public string Id { get; set; }
         public string Name { get; set; }

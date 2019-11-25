@@ -19,24 +19,17 @@ namespace WPFT_Training
         public MainWindow()
         {
             InitializeComponent();
-
-           
-            
-                
-            
         }
 
         private async void loadCoinsButton_Click(object sender, RoutedEventArgs e)
         {
-            var client = new HttpClient();
-            var response = await client.GetAsync("https://api.coinmarketcap.com/v1/ticker/");
-            var content = await response.Content.ReadAsStringAsync();
-            var coinList = JsonConvert.DeserializeObject<List<TradableCoins>>(content);
+            loadCoinsButton.IsEnabled = false;
+            loadingStatusPB.IsIndeterminate = true;
             
+            coinsDataGrid.ItemsSource = await TradableCoinsLoader.LoadTradableCoins();
             
-            
-
-            coinsDataGrid.ItemsSource = coinList;
+            loadingStatusPB.IsIndeterminate = false;
+            loadCoinsButton.IsEnabled = true;
         }
     }
     

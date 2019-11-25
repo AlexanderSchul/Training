@@ -11,8 +11,8 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Load Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Name="loadCoinsButton" Click="loadCoinsButton_Click"/>
-        
+        <Button IsEnabled="True" Content="Load Coins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Name="loadCoinsButton" Click="loadCoinsButton_Click"/>
+
         <DataGrid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Name="coinsDataGrid" AutoGenerateColumns="False" AlternatingRowBackground="LightGray" ColumnWidth="*" CanUserAddRows="False" CanUserReorderColumns="False">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -39,5 +39,6 @@
                 <DataGridTextColumn Header="Last_updated" Binding="{Binding Last_updated}" Width="100*" />
             </DataGrid.Columns>
         </DataGrid>
+        <ProgressBar HorizontalAlignment="Left" Height="20" Grid.Row="0" VerticalAlignment="Top" Width="100" Margin="145,0,0,0" Name="loadingStatusPB" Minimum="0" Maximum="100" IsIndeterminate="False" />
     </Grid>
 </Window>
