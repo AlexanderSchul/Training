@@ -18,5 +18,6 @@ namespace WPFT_Training.Helper
         public string Percent_change_24h { get; set; }
         public string Percent_change_7d { get; set; }
         public string Last_updated { get; set; }
+
     }
 }
